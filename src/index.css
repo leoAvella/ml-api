@@ -5,6 +5,15 @@ body {
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  height: 100vh;
+
+  top:0;
+  left:0;
+  bottom:0;
+  right:0;
+  height:100%;
+  width:100%;
+
 }
 
 code {
@@ -21,4 +30,25 @@ code {
   height: 34px;
   top: 11px;
   width: 42px;
+}
+
+.main{
+  background-color: #ededed;
+  height: 95%;
+}
+
+.picture-item{
+  height: 160px;
+  width: 160px;
+}
+
+.breadcrumb{
+  argin: 0 0 16px;
+  font-weight: 400;
+  line-height: 1.45;
+  margin: 0 0 24px;
+  font-family: Proxima Nova,-apple-system,Helvetica Neue,Helvetica,Roboto,Arial,sans-serif;
+  font-size: 14px;
+  padding: 0;
+  color: #666666;
 }
