@@ -37,6 +37,12 @@ code {
   height: 95%;
 }
 
+.item-list > a{
+  text-decoration: none !important;
+  color: #0E0901 !important;
+}
+
+
 .picture-item{
   height: 160px;
   width: 160px;
@@ -64,4 +70,37 @@ code {
 
 .form-search{
   width: 100%;
+}
+
+
+.info-item{
+  position: relative;
+  top: 20px;
+}
+
+.address{
+  top: 10px;
+  position: relative;
+}
+
+.ui-pdp-gallery {
+  height: 100%;
+  position: relative;
+  width: 486px;
+  min-height: 500px;
+}
+
+
+.ui-pdp-gallery__figure {
+  text-align: center;
+}
+.ui-pdp-gallery__figure__image {
+  cursor: zoom-in;
+  height: auto;
+  object-fit: contain;
+  width: 50%;
+}
+
+.free_shipping{
+  position: absolute;
 }

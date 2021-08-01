@@ -24,26 +24,34 @@ function Item (props){
 
     useEffect(() => getItemById(id), []);
     return (
-
             <div className="card">
                 <div className="card-body">
                     <div className="row">
-                        <div className="col-md-8">
-                            <div><Image src={data.item.picture} className=""/></div>
+                        <div className="col-md-9">
+                            <span>
+                                <figure className="ui-pdp-gallery__figure">
+                                    <Image src={data.item.picture} className="ui-pdp-image ui-pdp-gallery__figure__image"/>
+                                </figure>
+                            </span>
                             <div>
+                                <h3>Descripción del producto</h3>
                                 <p>
                                     {data.item.description}
                                 </p>
                             </div>
                         </div>
-                        <div className="col-md-4">
+                        <div className="col-md-3">
                             <p>
                                 <span> {data.item.condition}</span>
                                 <span> - vendidos {data.item.sold_quantity}</span>
                             </p>
                             <h5>{data.item.title}</h5>
-                            <p>{data.item.price.amount}</p>
-                            <button className="btn btn-primary btn-lg">Comprar</button>
+                            <br/>
+                            <h1>$ { Intl.NumberFormat('es-ES').format(data.item.price.amount) }</h1>
+                            <br/><br/>
+                            <div className="d-grid gap-2">
+                                <button className="btn btn-primary">Comprar</button>
+                            </div>
                         </div>
                     </div>
                 </div>

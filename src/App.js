@@ -25,10 +25,7 @@ class App extends Component{
 
         this.state = {
             qSearch: '',
-            form:{
-                q: ''
-            }
-
+            form:{q: ''}
         }
         this.handleChange = this.handleChange.bind(this);
         this.handleSubmit = this.handleSubmit.bind(this);
@@ -50,7 +47,6 @@ class App extends Component{
         return (searchParams.get("q")== null) ? '' : searchParams.get("q");
     }
 
-
     handleChange =  async (e) => {
         e.persist();
         await this.setState({
@@ -60,6 +56,7 @@ class App extends Component{
             }
         })
     }
+
 
     render(){
         return (
@@ -98,14 +95,13 @@ class App extends Component{
                         <Container>
                             <br/>
                             <Router>
-                                <Route path="/"exact>
+                                <Route path="/" exact>
                                     <div></div>
                                 </Route>
                                 <Route path="/items">
                                     <Items q={this.state.qSearch}/>
                                 </Route>
                                 <Route path="/item/:id" component={withRouter(Item)}/>
-
                             </Router>
                         </Container>
                     </div>
