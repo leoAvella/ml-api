@@ -34,7 +34,8 @@ code {
 
 .main{
   background-color: #ededed;
-  height: 95%;
+  height: 130vh;
+  width: 100%;
 }
 
 .item-list > a{
@@ -103,4 +104,12 @@ code {
 
 .free_shipping{
   position: absolute;
+  padding: 0px 10px;
+}
+.detail-product{
+  padding: 10px 20px;
+}
+.description{
+  padding: 50px 10px;
+  text-align: justify;
 }

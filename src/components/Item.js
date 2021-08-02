@@ -11,29 +11,30 @@ function Item (props){
             'Content-Type': 'application/json',
             'X-Requested-With': 'XMLHttpRequest'
     }
-    const [data, setData] = useState({"autor":{}, "item":{"price":{}}});
+    const [data, setDataItem] = useState({"autor":{}, "item":{"price":{}}});
     const id = props.match.params.id;
 
     const getItemById = (id) => {
         axios.get(url+"/"+id, {headers: headers}).then(response =>{
-            setData(response.data);
+            setDataItem(response.data);
         }).catch(error=>{
             console.log(error);
         })
     }
 
-    useEffect(() => getItemById(id), []);
+    useEffect(() => { getItemById(id); }, []);
+
     return (
             <div className="card">
                 <div className="card-body">
-                    <div className="row">
+                    <div className="row detail-product">
                         <div className="col-md-9">
                             <span>
                                 <figure className="ui-pdp-gallery__figure">
                                     <Image src={data.item.picture} className="ui-pdp-image ui-pdp-gallery__figure__image"/>
                                 </figure>
                             </span>
-                            <div>
+                            <div className="description" >
                                 <h3>Descripción del producto</h3>
                                 <p>
                                     {data.item.description}
@@ -47,7 +48,7 @@ function Item (props){
                             </p>
                             <h5>{data.item.title}</h5>
                             <br/>
-                            <h1>$ { Intl.NumberFormat('es-ES').format(data.item.price.amount) }</h1>
+                            <h1>$ { Intl.NumberFormat('de-DE').format(data.item.price.amount) }</h1>
                             <br/><br/>
                             <div className="d-grid gap-2">
                                 <button className="btn btn-primary">Comprar</button>
